@@ -1,0 +1,40 @@
+<section class="main container mrb-100 mrt-60">
+    <div class="container d-flex justify-content-between mb-5">
+        <h2 class="text-start fs-1">{{Category}}</h2>
+        <div class="d-flex justify-content-start">
+            <p class="mt-1 me-4">Sắp xếp theo: </p>
+            <div class="dropdown">
+                <button class="border btn btn-light dropdown-toggle fs-4" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Mặc định
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item fs-4" href="#">Từ a -> z</a></li>
+                    <li><a class="dropdown-item fs-4" href="#">Từ z -> a</a></li>
+                    <li><a class="dropdown-item fs-4" href="#">Mặc định</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-4 row-cols-lg-6 g-2 g-lg-3">
+        <div class="col border text-center rounded mx-2 my-4 p-0" ng-repeat="mh in Subjects" ng-if="mh.Value == selectedCategoryValue">
+            <a href="#!detail-oject/{{mh.Id}}/{{mh.Name}}/{{mh.Logo}}/{{mh.Value}}" class="text-unline">
+                <img loading="lazy" src="public/image/logo/{{mh.Logo}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-title fs-4 text-primary font-w-600 bg-body-tertiary py-2">{{mh.Name}}</p>
+                    <div class="d-flex justify-content-between mb-2 px-3 fs-5 text-dark">
+                        <div class="icon time">
+                            <i class="bi bi-clock-history me-2"></i><span>90 phút</span>
+                        </div>
+                        <div class="icon number">
+                            <i class="bi bi-award me-2"></i><span>+99K</span>
+                        </div>
+                    </div>
+                    <a href="#!detail-oject/{{mh.Id}}/{{mh.Name}}/{{mh.Logo}}/{{mh.Value}}">
+                        <div class="btn btn-light font-w-600 fs-4 mb-2">Xem khóa học</div>
+                    </a>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

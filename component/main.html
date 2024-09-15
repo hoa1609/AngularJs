@@ -1,0 +1,32 @@
+    
+    <h2 class="text-center fz-35">Trắc nghiệm online</h2>
+    <p class="text-center sub-header fz-16 mb-5"> Thông minh - đa dạng - chính xác</p>
+    <div class="container text-center mb-5">
+        <div class="row">
+            <div class="col border rounded mx-2 p-0" ng-repeat="mh in Subjects | limitTo:6">
+                <a href="#!detail-oject/{{mh.Id}}/{{mh.Name}}/{{mh.Logo}}/{{mh.Value}}" class="text-unline text-dark" onclick="reloadAndScroll()">
+                    <img loading="lazy" src="public/image/logo/{{mh.Logo}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title fs-4 text-primary font-w-600 bg-body-tertiary py-2"> {{mh.Name}}</p>
+                        <div class="d-flex justify-content-between mb-2 px-3 fs-5">
+                            <div class="icon time"><i class="bi bi-clock-history me-2"></i><span>90 phút</span>
+                            </div>
+                            <div class="icon number"><i class="bi bi-award me-2"></i><span>+99K</span></div>
+                        </div>
+                        <a href="#!detail-oject/{{mh.Id}}/{{mh.Name}}/{{mh.Logo}}/{{mh.Value}}" onclick="reloadAndScroll()">
+                            <div class="btn btn-light font-w-600 fs-4 mb-2">Xem khóa học</div>
+                        </a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="">&ensp;</div>
+            <a href="#!all" onclick="reloadAndScroll()" class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;">
+                Xem thêm
+                <i class="bi bi-arrow-right" aria-hidden="true">
+                    <use xlink:href="#arrow-right"></use>
+                </i>
+            </a>
+        </div>
+    </div>

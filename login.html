@@ -1,0 +1,52 @@
+
+<section class="d-flex justify-content-center bg-body-secondary mrb-100">
+    <div class="py-5" style="width: 1000px;">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="public/image/picture/draw2.png.webp"
+                    class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <h3 class="text-center fs-1 fw-bold mb-4">Đăng nhập</h3>
+                <form name="login">
+                    <div class="form-group mb-4" ng-class="{ 'has-error': login.username.$invalid, 'has-success': login.username.$valid}">
+                        <label class="fs-4" for="username">Tên</label>
+                        <input required type="text" ng-minlength="3" ng-model="u" name="username" id="username" class="form-control form-control-lg" />
+                        <p class="fs-5 fw-bold text-danger" ng-show="login.username.$error.minlength">Nhập tên >= 3 ký tự.</p>
+                    </div>
+                    
+                    <div class="mb-4"  ng-class="{ 'has-error': login.password.$invalid, 'has-success': login.password.$valid}">
+                        <label class="fs-4">Mật khẩu</label>
+                        <div class="input-group">
+                            <input required ng-minlength="6" ng-model="p" name="password" type="{{passwordType}}"class="form-control form-control-lg" />
+                            <button class="btn btn-light border " ng-click="togglePassword()">
+                                <i class="bi" ng-class="showPassword ? 'bi-eye-slash' : 'bi bi-eye' "></i>
+                            </button>
+                        </div>
+                        <p class="fs-5 fw-bold text-danger" ng-show="login.password.$error.minlength">Phải nhập >6 kí tự</p>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-center mb-4">
+                        <a ng-if="username == null" class="fs-4 me-5" href="#!fogetpassword">Quên mật khẩu?</a>
+                        <a ng-if="username == null" class="fs-4 me-5" href="#!registation">Đăng kí tài khoản?</a>
+                        <a ng-if="username != null" class="fs-4" href="#!fixaccount">Chỉnh tài khoản?</a>
+                    </div>
+
+                    <button ng-click="logIn()" type="submit" class="btn btn-primary btn-lg btn-block fs-4">Đăng nhập</button>
+                    <button ng-click="exit()" type="submit" class="btn btn-primary btn-lg btn-block fs-4">Đăng xuất</button>
+
+                    <div ng-if="username == null">
+                        <div class="d-flex my-4">
+                            <p class="text-center fw-bold mx-3 mb-0 text-muted fs-4">OR</p>
+                        </div>
+                        <a class="btn btn-primary btn-lg" style="background-color: #1960fb" href="#!" role="button">
+                            <i class="fab fa-facebook-f me-2"></i>Đăng nhập Facebook
+                        </a>
+                        <a class="btn btn-primary btn-lg" style="background-color: #55acee" href="#!" role="button">
+                            <i class="fab fa-twitter me-2"></i>Đăng nhập Twitter
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

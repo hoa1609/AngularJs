@@ -1,0 +1,51 @@
+<section class="d-flex justify-content-center bg-body-secondary mrb-100">
+    <div class="py-5" style="width: 1000px;">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="public/image/picture/draw2.png.webp" class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <h3 class="text-center fs-1 fw-bold mb-4">Đăng kí tài khoản</h3>
+                <form name="registerForm">
+                    <div class="mb-4" ng-class="{ 'has-error': registerForm.username.$invalid, 'has-success': registerForm.username.$valid}">
+                        <label class="fs-4">Tên của bạn</label>
+                        <input required ng-minlength="3" ng-model="Student.username" name="username" type="text"
+                            class="form-control form-control-lg" />
+                        <p class="fs-5 fw-bold text-danger" ng-show="registerForm.username.$error.minlength"> Tên đăng nhập phải có ít nhất 3 kí tự</p>
+                    </div>
+
+                    <div class="mb-4" ng-class="{ 'has-error': registerForm.email.$invalid, 'has-success': registerForm.email.$valid}">
+                        <label class="fs-4">Email</label>
+                        <input required type="email" ng-model="Student.email" name="email"
+                            class="form-control form-control-lg"/>
+                        <p class="fs-5 fw-bold text-danger" ng-show="registerForm.email.$error.email">Địa chỉ email không hợp lệ.</p>
+                    </div>
+
+                    <div class="mb-4" ng-class="{ 'has-error': registerForm.password.$invalid, 'has-success': registerForm.password.$valid}">
+                        <label class="fs-4">Mật khẩu</label>
+                        <div class="input-group">
+                            <input required ng-minlength="6" ng-model="Student.password" name="password" type="{{passwordType}}" class="form-control form-control-lg" />
+                            <button class="btn btn-light border " ng-click="togglePassword()">
+                                <i class="bi" ng-class="showPassword ? 'bi-eye-slash' : 'bi bi-eye' "></i>
+                            </button>
+                        </div>
+                        <p class="fs-5 fw-bold text-danger" ng-show="registerForm.password.$error.minlength">Mật khẩu phải có ít nhất 6 kí tự.</p>
+                    </div>
+
+                    <div class="mb-4" ng-class="{ 'has-error': registerForm.confirmPassword.$invalid, 'has-success': registerForm.confirmPassword.$valid}">
+                        <label class="fs-4">Nhập lại mật khẩu</label>
+                        <div class="input-group">
+                            <input required ng-minlength="6" ng-model="confirmPassword" name="confirmPassword" type="{{passwordType}}" class="form-control form-control-lg" />
+                            <button class="btn btn-light border " ng-click="togglePassword()">
+                                <i class="bi" ng-class="showPassword ? 'bi-eye-slash' : 'bi bi-eye' "></i>
+                            </button>
+                        </div>
+                        <p class="fs-5 fw-bold text-danger" ng-show="confirmPassword !== Student.password">Mật khẩu không khớp.</p>
+                    </div>
+
+                    <button ng-click="register()" type="submit" class="btn btn-success btn-lg btn-block fs-4">Đăng kí tài khoản</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

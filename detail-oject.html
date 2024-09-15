@@ -1,0 +1,51 @@
+<section class="detail mrt-100 mrb-100">
+    <h3 class="text-center fw-bold fs-1 mb-5">{{nameMH}}</h3>
+    <div class="container">
+        <div class="align-items-center d-flex justify-content-center">
+            <div class="col-6">
+                <img src="public/image/logo/{{logoMH}}" alt="..." style="width: 50%;"
+                    class="object-fit-cover border rounded">
+            </div>
+            <div class="col-6 fs-2">
+                <div class="icon d-flex justify-content-end mb-5">
+                    <a href=""> <i class="bi bi-heart me-4"></i></a>
+                    <a href=""><i class="bi bi-share"></i></a>
+                </div>
+                <div class="text mb-5">
+                    Tin học là môn học nền tảng về công nghệ thông tin và máy tính, giúp học viên hiểu về cách hoạtđộng của máytính,
+                    lập trình, xử lý dữ liệu và ứng dụng công nghệ trong cuộc sống và công việc.
+                    Qua môn này, học viên phát triển kỹ năng logic, tư duy sáng tạo và khả năng giải quyết vấn đề hiệu quả trong thời đại số hóa.
+                </div>
+                <form action="" method="get">
+                    <div class="detail mb-5 fs-3">
+                        <label for="times" class="me-3">Chọn thời gian:</label>
+                        <select id="times" class="border rounded p-2">
+                            <option value="volvo">Kiểm tra 15 phút</option>
+                            <option value="saab">Kiểm tra 1 tiết</option>
+                            <option value="opel">Bài thi</option>
+                        </select>
+                    </div>
+                    <div class="option d-flex justify-content-between mb-5 fs-3">
+                        <div class="lever">
+                            <label for="lever" class="me-3">Chọn độ khó:</label>
+                            <select id="lever" class="border rounded p-2">
+                                <option value="volvo">Dễ</option>
+                                <option value="saab">Trung bình</option>
+                                <option value="opel">Khó</option>
+                            </select>
+                        </div>
+                        <div class="eyenumber">
+                            <i class="bi bi-eye fs-3 me-2"></i> <span class="fs-4">Có 1.888 đã làm</span>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button type="button" class="btn btn-warning me-4">
+                            <a ng-if="username" href="#!detail/{{idMH}}/{{nameMH}}" class="text-unline text-dark fs-3">Nhấn để tiến hành làm bài</a>
+                            <span ng-if="!username" class="text-unline text-dark fs-3">Bạn cần đăng nhập để tiếp tục</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

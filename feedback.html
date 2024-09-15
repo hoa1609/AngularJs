@@ -1,0 +1,29 @@
+<section class="main bg-body-tertiary p-5 mrb-100">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2 class="text-center">Góp ý í kiến</h2>
+            <form name="feedback">
+                <div class="form-group mb-3" ng-class="{ 'has-error': feedback.name.$invalid , 'has-success':feedback.name.$valid && feedback.name.$dirty }">
+                    <label><h3>Họ và Tên:</h3></label>
+                    <input required ng-model="name" ng-minlength="3" type="text" class="form-control fs-4" name="name" id="name" placeholder="Nhập tên...">
+                    <p class="fs-5 fw-bold text-danger" ng-show="feedback.name.$error.minlength ">Tên phải có ít nhất 3 ký tự.</p>
+                </div>
+                <div class="form-group mb-3" ng-class="{ 'has-error': feedback.email.$invalid , 'has-success': feedback.email.$dirty }">
+                   <label><h3>Email:</h3></label>
+                    <input required ng-model="email" type="email" class="form-control fs-4" id="email" name="email" placeholder="nhập email...">
+                    <p class="fs-5 fw-bold text-danger" ng-show="feedback.email.$error.email ">Phải đúng theo cú pháp email</p>
+                </div>
+                <div class="form-group mb-3">
+                    <label><h3>Nội dung ý kiến:</h3></label>
+                    <textarea required ng-model="comment" ng-minlength="2" ng-maxlength="120" class="form-control fs-4" name="comment" rows="5"
+                        placeholder="nhập nội dung..."></textarea>
+                    <p class="fs-5 fw-bold text-danger" ng-show="feedback.comment.$error.maxlength">Không nhập quá 120 kí tự</p>
+                    <p class="fs-5 fw-bold text-danger" ng-show="feedback.comment.$error.minlength">Nhập >2 kí tự</p>
+                </div>
+                <button type="submit" class="btn btn-primary fs-4">Gửi Ý Kiến</button>
+            </form>
+          </div>
+        </div>
+    </div>
+</section>

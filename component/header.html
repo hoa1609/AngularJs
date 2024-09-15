@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center align-items-center card-header bg-warning-subtle p-2">
+    <div class="scrolling-text-container">
+        <ul class="scrolling-text-list">
+            <li class="text-center">
+                <a href="#" class="text-unline text-dark">Khuyến mãi đăng kí cho lần đầu thi tại trang web</a>
+                <i class="bi bi-arrow-right-circle-fill"></i>
+            </li>
+            <li class="text-center">
+                <a href="#" class="text-unline text-dark">Bắt đầu thi ngay </a>
+                <i class="bi bi-arrow-right-circle-fill"></i>
+            </li>
+            <li class="text-center">
+                <a href="#" class="text-unline text-dark">Khiến mãi hỗ trợ giải bài tập online 24/7 </a>
+                <i class="bi bi-arrow-right-circle-fill"></i>
+            </li>
+        </ul>
+    </div>
+</div>
+<header class="d-flex justify-content-between align-items-center bg-light-subtle header-2 ticket">
+    <nav class="d-flex justify-content-between align-items-center container">
+        <a href="index.html">
+            <div class="logo">
+                <img loading="lazy" src="public/image/logo/logo.png" alt="logo">
+            </div>
+        </a>
+        <ul class="nav justify-content-center align-items-center">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#!home">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#!all">Tất cả</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" href="#" role="" data-bs-toggle="dropdown">
+                    Danh mục
+                </a>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="cte in Categorys">
+                        <a class="dropdown-item" ng-click="selectCategoryValue(cte.Value)"
+                            href="#!category/{{cte.Category}}/{{cte.Value}}">{{cte.Category}}</a>
+
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#!intro">Giới thiệu</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#!contact">Liên hệ </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#!feedback">Góp ý</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#!question">Hỏi đáp</a>
+            </li>
+        </ul>
+        <div class="btn sign-in">
+            <a class="button" href="#!login">
+                <span ng-if="!username">Đăng nhập</span>
+                <span ng-if="username">{{username}}</span>
+                <i class="bi bi-person-circle"></i>
+            </a>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,45 @@
+<section class="container bg-light mrb-100 mrt-60 p-5 fs-4">
+    <div class="row">
+        <h1 class="text-center text-title fs-1 mrb-30"> Thông tin liên hệ</h1>
+        <div class="col">
+            <div class="container">
+                <p>Địa chỉ : Hải Nam , Trung Quốc</p>
+                <h3>Thông tin liên hệ</h3>
+                <ul>
+                    <li>+840809090</li>
+                    <li><a href="">tracnghiem@gmail.com</a></li>
+                </ul>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.8964645417914!2d108.15654907519796!3d16.061652539640527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421924682e8689%3A0x48eb0bdbeec05215!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBTxrAgUGjhuqFtIC0gxJDhuqFpIGjhu41jIMSQw6AgTuG6tW5n!5e1!3m2!1svi!2s!4v1710952251850!5m2!1svi!2s"
+                width="500" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col">
+            <div class="container border rounded p-4">
+                <form name="contact">
+                    <h1 class="text-center fs-3 mb-5">Nhập thông tin phản hồi cho chúng tôi</h1>
+                    <h3>Nhập địa chỉ comment</h3>
+                    <div
+                        ng-class="{'has-error': contact.email.$invalid, 'has-success': contact.email.$valid && contact.email.$dirty}">
+                        <input required type="email" ng-model="email" name="email" class="form-control fs-4"
+                            placeholder="nhập địa chỉ email...">
+                        <p class="fs-5 fw-bold text-danger" ng-show="contact.email.$error.email">Ghi sai cú pháp gmail.
+                        </p>
+                    </div>
+                    <h3 class="pt-4">Nhập nội dung phản hồi</h3>
+                    <div
+                        ng-class="{'has-error': contact.comment.$invalid, 'has-success': contact.comment.$valid && contact.comment.$dirty}">
+                        <input required ng-model="comment" type="text" name="comment" class="form-control fs-4"
+                            placeholder="nhập nội dung...">
+                    </div>
+                    <div class="form-text"> </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="">&ensp;</div>
+                        <a class="btn btn-primary mt-4 fs-3" href="#" role="button">Gửi</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

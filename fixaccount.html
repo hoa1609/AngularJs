@@ -1,0 +1,53 @@
+<section class="d-flex justify-content-center bg-body-secondary mrb-100">
+    <div class="py-5" style="max-width: 1000px;">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="https://media.istockphoto.com/id/1445722706/vi/vec-to/c%C3%B4ng-c%E1%BB%A5-logo-thi%E1%BA%BFt-k%E1%BA%BF-vector.jpg?s=1024x1024&w=is&k=20&c=FdxfkqlIvy7gRWsPMgvkQ3o49yEGXTOKpOz6B7KtJ58=" class="img-fluid" alt="Phone image" style="width: 80%;">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <h3 class="text-center fs-1 fw-bold mb-5">Chỉnh sửa tài khoản</h3>
+                <form name="changePassword">
+                    <div class="mb-4">
+                        <label class="fs-4">Tên tài khoản</label>
+                        <input required  type="text" class="form-control form-control-lg" ng-model="username"/>
+                    </div>
+
+                    <div class="mb-4" ng-class="{'has-error': changePassword.pass_old.$invalid, 'has-success': changePassword.pass_old.$valid && changePassword.pass_old.$dirty}">
+                        <label class="fs-4">Mật khẩu hiện tại</label>
+                        <div class="input-group">
+                            <input required name="pass_old" minlength="6" ng-model="pass_old" type="{{passwordType}}" class="form-control form-control-lg" />
+                            <button class="btn btn-light border " ng-click="togglePassword()">
+                                <i class="bi" ng-class="showPassword ? 'bi-eye-slash' : 'bi bi-eye' "></i>
+                            </button>
+                        </div>
+                        <p class="fs-5 fw-bold text-danger" ng-show="changePassword.pass_old.$error.minlength">Mật khẩu phải có ít nhất 6 kí tự.</p>
+                    </div>
+
+                    <div class="mb-4" ng-class="{ 'has-error': changePassword.pass_new1.$invalid, 'has-success': changePassword.pass_new1.$valid && changePassword.pass_new1.$dirty}">
+                        <label class="fs-4">Mật khẩu mới</label>
+                        <div class="input-group">
+                            <input required name="pass_new1" minlength="6" ng-model="pass_new1" type="{{passwordType}}" class="form-control form-control-lg" />
+                            <button class="btn btn-light border " ng-click="togglePassword()">
+                                <i class="bi" ng-class="showPassword ? 'bi-eye-slash' : 'bi bi-eye' "></i>
+                            </button>
+                        </div>
+                        <p class="fs-5 fw-bold text-danger" ng-show="changePassword.pass_new1.$error.minlength">Mật khẩu phải có ít nhất 6 kí tự.</p>
+                    </div>
+
+                    <div class="mb-4" ng-class="{ 'has-error': changePassword.pass_new2.$invalid, 'has-success': changePassword.pass_new2.$valid && changePassword.pass_new2.$dirty}">
+                        <label class="fs-4">Nhập lại mật khẩu mới</label>
+                        <div class="input-group">
+                            <input required name="pass_new2" minlength="6" ng-model="pass_new2" type="{{passwordType}}" class="form-control form-control-lg" />
+                            <button class="btn btn-light border " ng-click="togglePassword()">
+                                <i class="bi" ng-class="showPassword ? 'bi-eye-slash' : 'bi bi-eye' "></i>
+                            </button>
+                        </div>
+                        <p class="fs-5 fw-bold text-danger" ng-show="changePassword.pass_new2.$error.minlength && changePassword.pass_new2.$dirty">Mật khẩu phải có ít nhất 6 kí tự.</p>
+                    </div>
+
+                    <button ng-click="changepass()" type="submit" class="btn btn-danger btn-lg btn-block fs-4">Chỉnh sửa tài khoản</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

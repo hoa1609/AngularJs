@@ -1,0 +1,30 @@
+<section class="main container mrt-100 mrb-100">
+    <h2 class="text-center fw-bold mb-5 fs-2">Kết quả kiểm tra trắc nghiệm </h2>
+    <div class="border">
+        <table class="table table-striped" style="margin-bottom: -1px;">
+            <thead>
+              <tr>
+                <th scope="col">Stt</th>
+                <th scope="col">Câu hỏi</th>
+                <th scope="col">Câu trả lời</th>
+                <th scope="col">Kết quả</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr ng-repeat="qtion in allquestion">
+                <th>{{$index +1}}.</th>
+                <td> {{qtion.Text}}</td>
+                <td></td>
+                <td>Defause</td>
+              </tr>
+              
+              <!-- point -->
+              <tr ng-controller="ResultCtrl">
+                <td colspan="3" class="fw-bold bg-danger-subtle">Điểm</td>
+                <td class="fw-bold bg-danger-subtle text-danger "> {{point}} </td>
+              </tr>
+            </tbody>
+            
+          </table>
+    </div>
+</section>
